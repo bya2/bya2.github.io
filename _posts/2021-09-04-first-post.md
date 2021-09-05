@@ -3,21 +3,14 @@ title: "Hello"
 
 categories:
   - Post
-
 tags:
-  - Post 
-  - Read
-  - First
+  - [Post, Read, First]
 
 toc: true
-
-toc-label: "톡톡"
-
-# # toc-icon:
-
 toc-sticky: true
 
-# # last_modified_at: 
+date: 2021-09-04
+last_modified_at: 2021-09-05
 ---
 
 # 첫번째 글!
