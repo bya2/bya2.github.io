@@ -3,7 +3,8 @@ title: 성능 측정을 위해 Performance API 사용
 
 categories:
   - Node.js
-tags: [Javascript, Node.js, "Performnace API"]
+tags: 
+  - [Javascript, Node.js, "Performnace API"]
 
 toc: true
 toc-sticky: true
@@ -91,29 +92,6 @@ console.log(t1 - t0);
 
 > Creates a new PerformanceMark entry in the Performance Timeline. A PerformanceMark is a subclass of PerformanceEntry whose performanceEntry.entryType is always 'mark', and whose performanceEntry.duration is always 0. Performance marks are used to mark specific significant moments in the Performance Timeline.
 
-```js
-performance.mark("squirrel");
-performance.mark("squirrel");
-performance.mark("monkey");
-performance.mark("monkey");
-performance.mark("dog");
-performance.mark("dog");
-
-
-// Get all of the PerformanceMark entries.
-const allEntries = performance.getEntriesByType("mark");
-console.log(allEntries.length);
-// 6
-
-// Get all of the "monkey" PerformanceMark entries.
-const monkeyEntries = performance.getEntriesByName("monkey");
-console.log(monkeyEntries.length);
-// 2
-
-// Clear out all of the marks.
-performance.clearMarks();
-```
-
 ## Performance.measure
 
 (name, [, startMarkOrOptions[, endMark]])
@@ -183,9 +161,34 @@ performance.measure('A to B', 'A', 'B');
 
 이런 방식으로 사용하면 되겠습니다!
 
+아래는 Node가 아닌 js에서 사용되는 코드입니다.
+```js
+performance.mark("squirrel");
+performance.mark("squirrel");
+performance.mark("monkey");
+performance.mark("monkey");
+performance.mark("dog");
+performance.mark("dog");
+
+
+// Get all of the PerformanceMark entries.
+const allEntries = performance.getEntriesByType("mark");
+console.log(allEntries.length);
+// 6
+
+// Get all of the "monkey" PerformanceMark entries.
+const monkeyEntries = performance.getEntriesByName("monkey");
+console.log(monkeyEntries.length);
+// 2
+
+// Clear out all of the marks.
+performance.clearMarks();
+```
+
 # 참고
 
 [yceffort님의 블로그](https://yceffort.kr/2020/12/measuring-performance-of-javascript-functions)  
-[Nodejs.org](https://nodejs.org/dist./v10.17.0/docs/api/perf_hooks.html)
+[Nodejs.org](https://nodejs.org/dist./v10.17.0/docs/api/perf_hooks.html)  
+[Mozilla](https://developer.mozilla.org/ko/docs/Web/API/Performance)
 
 
