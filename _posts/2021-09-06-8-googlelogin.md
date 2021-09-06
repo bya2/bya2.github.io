@@ -80,11 +80,11 @@ ex) 캘린더, ...
 
 이제 `Resource owner`가 `Content screen`에서 권한에 대한 허용을 누르면, `Resource server`는 밑의 정보를 기록합니다.
 
-Resource owner가 'user_id: 1'이라면, 'client_id: 1'에게 'scope: b, c'를 허용했다고 기록.  
-그 다음, Resource server가 Authorization code를 만든 후, Resource owner에게 전송.  
-Header에 Redirection code를 담아서 Location 값을 부여.  
-Location 값은 Redirection이므로, Resource owner은 자기도 모르게 Client에게 다시 접속.  
-따라서 Client에게 code가 전달되고, 이를 기록.  
+1. Resource owner가 'user_id: 1'이라면, 'client_id: 1'에게 'scope: b, c'를 허용했다고 기록.  
+2. 그 다음, Resource server가 Authorization code를 만든 후, Resource owner에게 전송.  
+3. Header에 Redirection code를 담아서 Location 값을 부여.  
+4. Location 값은 Redirection이므로, Resource owner은 자기도 모르게 Client에게 다시 접속.  
+5. 따라서 Client에게 code가 전달되고, 이를 기록.  
 {: .notice}
 
 이제 API 활성화를 해야합니다.
@@ -97,7 +97,7 @@ Location 값은 Redirection이므로, Resource owner은 자기도 모르게 Clie
 
 `Client`는 Google Plus API를 통해서 `Access token`을 이용해, `Resource server`의 프로필 작업, id와 같은 정보들을 요청하고, 그것을 응답받은 뒤, 그 결과를 callback 함수를 통해 전달할 것입니다.
 
-## 5.
+# 5.
 
 Facebook으로 로그인을 하든, Google로 로그인을 하든 간에 같은 사용자로 인식될 수 있게 하는 것이 기능 상 더 좋은 방법입니다.
 
